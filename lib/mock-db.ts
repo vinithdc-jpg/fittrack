@@ -41,7 +41,12 @@ export type WorkoutRecord = {
   duration: number;
   date: string;
   notes: string;
-  exercises: Array<{ name: string; sets: number; reps: number; weight: number }>;
+  exercises: Array<{
+    name: string;
+    sets: number;
+    reps: number;
+    weight: number;
+  }>;
 };
 
 export type MealRecord = {
@@ -119,9 +124,24 @@ export const mockUsers: UserProfile[] = [
 ];
 
 export const reminders: Reminder[] = [
-  { id: "r1", title: "Hydration check", detail: "Finish 500ml before 5pm", due: "Today • 4:30 PM" },
-  { id: "r2", title: "Evening walk", detail: "30 minute walk in the park", due: "Today • 7:00 PM" },
-  { id: "r3", title: "Sleep routine", detail: "Wind down 45 minutes before bed", due: "Tonight • 10:15 PM" },
+  {
+    id: "r1",
+    title: "Hydration check",
+    detail: "Finish 500ml before 5pm",
+    due: "Today • 4:30 PM",
+  },
+  {
+    id: "r2",
+    title: "Evening walk",
+    detail: "30 minute walk in the park",
+    due: "Today • 7:00 PM",
+  },
+  {
+    id: "r3",
+    title: "Sleep routine",
+    detail: "Wind down 45 minutes before bed",
+    due: "Tonight • 10:15 PM",
+  },
 ];
 
 export const workouts: WorkoutRecord[] = [
@@ -150,20 +170,90 @@ export const workouts: WorkoutRecord[] = [
 ];
 
 export const meals: MealRecord[] = [
-  { id: "m1", mealType: "Breakfast", name: "Greek yogurt bowl", quantity: "1 bowl", calories: 420, protein: 28, carbs: 34, fats: 14, date: "2026-10-30T08:00:00" },
-  { id: "m2", mealType: "Lunch", name: "Chicken quinoa salad", quantity: "1 serving", calories: 560, protein: 42, carbs: 38, fats: 22, date: "2026-10-30T12:30:00" },
-  { id: "m3", mealType: "Dinner", name: "Salmon rice bowl", quantity: "1 bowl", calories: 650, protein: 35, carbs: 48, fats: 29, date: "2026-10-30T19:15:00" },
+  {
+    id: "m1",
+    mealType: "Breakfast",
+    name: "Greek yogurt bowl",
+    quantity: "1 bowl",
+    calories: 420,
+    protein: 28,
+    carbs: 34,
+    fats: 14,
+    date: "2026-10-30T08:00:00",
+  },
+  {
+    id: "m2",
+    mealType: "Lunch",
+    name: "Chicken quinoa salad",
+    quantity: "1 serving",
+    calories: 560,
+    protein: 42,
+    carbs: 38,
+    fats: 22,
+    date: "2026-10-30T12:30:00",
+  },
+  {
+    id: "m3",
+    mealType: "Dinner",
+    name: "Salmon rice bowl",
+    quantity: "1 bowl",
+    calories: 650,
+    protein: 35,
+    carbs: 48,
+    fats: 29,
+    date: "2026-10-30T19:15:00",
+  },
 ];
 
 export const sleepRecords: SleepRecord[] = [
-  { id: "s1", date: "2026-10-28", start: "22:45", end: "06:15", duration: 450, quality: 4, notes: "Fell asleep quickly after a short reading session." },
-  { id: "s2", date: "2026-10-29", start: "23:10", end: "06:50", duration: 460, quality: 5, notes: "Stable sleep with two brief wake-ups." },
+  {
+    id: "s1",
+    date: "2026-10-28",
+    start: "22:45",
+    end: "06:15",
+    duration: 450,
+    quality: 4,
+    notes: "Fell asleep quickly after a short reading session.",
+  },
+  {
+    id: "s2",
+    date: "2026-10-29",
+    start: "23:10",
+    end: "06:50",
+    duration: 460,
+    quality: 5,
+    notes: "Stable sleep with two brief wake-ups.",
+  },
 ];
 
 export const habits: HabitRecord[] = [
-  { id: "h1", title: "Morning walk", description: "Walk 20 minutes outdoors before breakfast.", streak: 6, completionRate: 86, frequency: "Daily", completions: [1, 1, 0, 1, 1, 1, 1] },
-  { id: "h2", title: "Drink water", description: "Reach your hydration target across the day.", streak: 11, completionRate: 92, frequency: "Daily", completions: [1, 1, 1, 1, 0, 1, 1] },
-  { id: "h3", title: "Stretching", description: "Mobility routine after training or desk work.", streak: 4, completionRate: 71, frequency: "Weekly", completions: [0, 1, 1, 0, 1, 1, 1] },
+  {
+    id: "h1",
+    title: "Morning walk",
+    description: "Walk 20 minutes outdoors before breakfast.",
+    streak: 6,
+    completionRate: 86,
+    frequency: "Daily",
+    completions: [1, 1, 0, 1, 1, 1, 1],
+  },
+  {
+    id: "h2",
+    title: "Drink water",
+    description: "Reach your hydration target across the day.",
+    streak: 11,
+    completionRate: 92,
+    frequency: "Daily",
+    completions: [1, 1, 1, 1, 0, 1, 1],
+  },
+  {
+    id: "h3",
+    title: "Stretching",
+    description: "Mobility routine after training or desk work.",
+    streak: 4,
+    completionRate: 71,
+    frequency: "Weekly",
+    completions: [0, 1, 1, 0, 1, 1, 1],
+  },
 ];
 
 export const bodyMeasurements: BodyMeasurement[] = [
@@ -178,9 +268,33 @@ export const waterRecords: WaterRecord[] = [
 ];
 
 export const activities: ActivityRecord[] = [
-  { id: "a1", date: "2026-10-30", activityType: "Walk", steps: 8421, distance: 6.4, activeMinutes: 65, calories: 412 },
-  { id: "a2", date: "2026-10-29", activityType: "Run", steps: 7300, distance: 5.2, activeMinutes: 48, calories: 361 },
-  { id: "a3", date: "2026-10-28", activityType: "Cycle", steps: 5400, distance: 4.1, activeMinutes: 39, calories: 298 },
+  {
+    id: "a1",
+    date: "2026-10-30",
+    activityType: "Walk",
+    steps: 8421,
+    distance: 6.4,
+    activeMinutes: 65,
+    calories: 412,
+  },
+  {
+    id: "a2",
+    date: "2026-10-29",
+    activityType: "Run",
+    steps: 7300,
+    distance: 5.2,
+    activeMinutes: 48,
+    calories: 361,
+  },
+  {
+    id: "a3",
+    date: "2026-10-28",
+    activityType: "Cycle",
+    steps: 5400,
+    distance: 4.1,
+    activeMinutes: 39,
+    calories: 298,
+  },
 ];
 
 export const weeklyTrend = [
@@ -194,7 +308,9 @@ export const weeklyTrend = [
 ];
 
 export function findUserByEmail(email: string) {
-  return mockUsers.find((user) => user.email.toLowerCase() === email.toLowerCase());
+  return mockUsers.find(
+    (user) => user.email.toLowerCase() === email.toLowerCase(),
+  );
 }
 
 export function registerUser(data: {

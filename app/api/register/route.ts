@@ -21,7 +21,10 @@ export async function POST(request: Request) {
     const parsed = registerSchema.safeParse(body);
 
     if (!parsed.success) {
-      return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
+      return NextResponse.json(
+        { error: parsed.error.flatten() },
+        { status: 400 },
+      );
     }
 
     const user = registerUser(parsed.data);
@@ -36,7 +39,10 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Unable to register user" },
+      {
+        error:
+          error instanceof Error ? error.message : "Unable to register user",
+      },
       { status: 400 },
     );
   }

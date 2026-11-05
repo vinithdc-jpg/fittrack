@@ -1,7 +1,13 @@
 import { MoonStar } from "lucide-react";
 
 import { DashboardShell } from "@/components/dashboard-shell";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { sleepRecords, weeklyTrend } from "@/lib/mock-db";
 
 const maxSleep = Math.max(...weeklyTrend.map((item) => item.sleep));
@@ -18,21 +24,28 @@ export default function SleepPage() {
               </div>
               <div>
                 <CardTitle>Sleep overview</CardTitle>
-                <CardDescription>Duration and quality trends across recent nights.</CardDescription>
+                <CardDescription>
+                  Duration and quality trends across recent nights.
+                </CardDescription>
               </div>
             </div>
           </CardHeader>
           <CardContent className="h-72">
             <div className="flex h-full items-end gap-3 pt-2">
               {weeklyTrend.map((day) => (
-                <div key={day.day} className="flex flex-1 flex-col items-center gap-2">
+                <div
+                  key={day.day}
+                  className="flex flex-1 flex-col items-center gap-2"
+                >
                   <div className="flex h-52 w-full items-end">
                     <div
                       className="w-full rounded-t-xl bg-violet-500"
                       style={{ height: `${(day.sleep / maxSleep) * 100}%` }}
                     />
                   </div>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">{day.day}</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    {day.day}
+                  </span>
                 </div>
               ))}
             </div>
@@ -45,11 +58,21 @@ export default function SleepPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {sleepRecords.map((record) => (
-              <div key={record.id} className="rounded-md bg-slate-50 p-4 dark:bg-slate-800/60">
+              <div
+                key={record.id}
+                className="rounded-md bg-slate-50 p-4 dark:bg-slate-800/60"
+              >
                 <p className="font-medium">{record.date}</p>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{record.start} → {record.end}</p>
-                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Duration: {Math.round(record.duration / 60)}h {record.duration % 60}m</p>
-                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Quality: {record.quality}/5</p>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                  {record.start} → {record.end}
+                </p>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                  Duration: {Math.round(record.duration / 60)}h{" "}
+                  {record.duration % 60}m
+                </p>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                  Quality: {record.quality}/5
+                </p>
               </div>
             ))}
           </CardContent>

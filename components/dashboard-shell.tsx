@@ -1,5 +1,16 @@
 import Link from "next/link";
-import { Activity, Dumbbell, Droplets, Heart, Home, MoonStar, NotebookPen, Salad, Sparkles, UserRound } from "lucide-react";
+import {
+  Activity,
+  Dumbbell,
+  Droplets,
+  Heart,
+  Home,
+  MoonStar,
+  NotebookPen,
+  Salad,
+  Sparkles,
+  UserRound,
+} from "lucide-react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -32,7 +43,9 @@ export function DashboardShell({
               F
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Personal health</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                Personal health
+              </p>
               <h1 className="text-xl font-semibold">FitTrack</h1>
             </div>
           </div>
@@ -45,7 +58,9 @@ export function DashboardShell({
                 aria-current={title === itemTitle ? "page" : undefined}
                 className={cn(
                   "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white",
-                  title === itemTitle ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200" : "",
+                  title === itemTitle
+                    ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200"
+                    : "",
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -60,15 +75,21 @@ export function DashboardShell({
               <span className="text-sm font-semibold">Goal progress</span>
             </div>
             <p className="text-2xl font-semibold">72%</p>
-            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Strong momentum this week</p>
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+              Strong momentum this week
+            </p>
           </div>
         </aside>
 
         <div className="min-w-0 flex-1">
           <header className="mb-4 flex items-center justify-between rounded-md border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:mb-6 md:p-5">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Today, 31 Oct 2026</p>
-              <h2 className="mt-1 text-xl font-semibold tracking-tight md:text-2xl">{title}</h2>
+              <p className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                Today, 31 Oct 2026
+              </p>
+              <h2 className="mt-1 text-xl font-semibold tracking-tight md:text-2xl">
+                {title}
+              </h2>
             </div>
             <div className="flex items-center gap-3">
               <Button variant="outline" className="hidden sm:inline-flex">
@@ -79,7 +100,10 @@ export function DashboardShell({
             </div>
           </header>
 
-          <nav aria-label="Main navigation" className="mb-4 flex gap-2 overflow-x-auto pb-1 lg:hidden">
+          <nav
+            aria-label="Main navigation"
+            className="mb-4 flex gap-2 overflow-x-auto pb-1 lg:hidden"
+          >
             {navItems.map(({ href, title: itemTitle, icon: Icon }) => (
               <Link
                 key={href}

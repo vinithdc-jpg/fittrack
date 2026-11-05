@@ -21,11 +21,17 @@ function getServerThemeSnapshot() {
 }
 
 export function ThemeToggle() {
-  const darkMode = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, getServerThemeSnapshot);
+  const darkMode = useSyncExternalStore(
+    subscribeToTheme,
+    getThemeSnapshot,
+    getServerThemeSnapshot,
+  );
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("fittrack-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const initialDarkMode = savedTheme ? savedTheme === "dark" : prefersDark;
 
     document.documentElement.classList.toggle("dark", initialDarkMode);
@@ -36,7 +42,10 @@ export function ThemeToggle() {
     const nextDarkMode = !darkMode;
 
     document.documentElement.classList.toggle("dark", nextDarkMode);
-    window.localStorage.setItem("fittrack-theme", nextDarkMode ? "dark" : "light");
+    window.localStorage.setItem(
+      "fittrack-theme",
+      nextDarkMode ? "dark" : "light",
+    );
     window.dispatchEvent(new Event(themeChangeEvent));
   };
 
@@ -48,7 +57,11 @@ export function ThemeToggle() {
       aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
       aria-pressed={darkMode}
     >
-      {darkMode ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}
+      {darkMode ? (
+        <SunMedium className="h-4 w-4" />
+      ) : (
+        <MoonStar className="h-4 w-4" />
+      )}
     </Button>
   );
 }

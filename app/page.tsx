@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { Activity, ArrowRight, Droplets, Dumbbell, Footprints, MoonStar } from "lucide-react";
+import {
+  Activity,
+  ArrowRight,
+  Droplets,
+  Dumbbell,
+  Footprints,
+  MoonStar,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +19,9 @@ export default function Home() {
             F
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Wellness OS</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              Wellness OS
+            </p>
             <h1 className="text-xl font-semibold">FitTrack</h1>
           </div>
         </div>
@@ -37,7 +46,8 @@ export default function Home() {
               Move better. Eat smarter. Recover deeper.
             </h2>
             <p className="mt-5 max-w-xl text-lg text-slate-600 dark:text-slate-300">
-              A premium daily wellness dashboard for workouts, nutrition, sleep, hydration, habits, and long-term progress.
+              A premium daily wellness dashboard for workouts, nutrition, sleep,
+              hydration, habits, and long-term progress.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href="/register">
@@ -46,7 +56,9 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/dashboard">
-                <Button variant="outline" size="lg">View demo dashboard</Button>
+                <Button variant="outline" size="lg">
+                  View demo dashboard
+                </Button>
               </Link>
             </div>
           </div>
@@ -66,12 +78,16 @@ export default function Home() {
               <div className="rounded-md border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                 <Droplets className="mb-3 h-6 w-6 text-cyan-500" />
                 <p className="text-2xl font-semibold">1.5L</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">hydration</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  hydration
+                </p>
               </div>
               <div className="rounded-md border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                 <MoonStar className="mb-3 h-6 w-6 text-violet-500" />
                 <p className="text-2xl font-semibold">7.6h</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">sleep</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  sleep
+                </p>
               </div>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
@@ -104,12 +120,17 @@ export default function Home() {
               text: "Build routines around motion, nutrition, and sustainable progress.",
             },
           ].map(({ icon: Icon, title, text }) => (
-            <div key={title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+            <div
+              key={title}
+              className="rounded-md border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
+            >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{text}</p>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                {text}
+              </p>
             </div>
           ))}
         </section>

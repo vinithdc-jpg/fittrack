@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "FitTrack | Health & Fitness",
-  description: "A personal health and fitness tracking dashboard for workouts, hydration, sleep, nutrition, and habits.",
+  description:
+    "A personal health and fitness tracking dashboard for workouts, hydration, sleep, nutrition, and habits.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-50">{children}</body>
+      <body className="min-h-full bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,7 +5,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -47,11 +53,23 @@ export default function LoginPage() {
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+              <Input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                required
+              />
             </div>
             {error ? <p className="text-sm text-rose-600">{error}</p> : null}
             <Button type="submit" className="w-full" disabled={isSubmitting}>
@@ -59,7 +77,13 @@ export default function LoginPage() {
             </Button>
           </form>
           <p className="mt-5 text-center text-sm text-slate-600 dark:text-slate-400">
-            Need an account? <Link href="/register" className="font-semibold text-emerald-700 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-200">Create one</Link>
+            Need an account?{" "}
+            <Link
+              href="/register"
+              className="font-semibold text-emerald-700 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-200"
+            >
+              Create one
+            </Link>
           </p>
         </CardContent>
       </Card>

@@ -2,7 +2,13 @@ import { Droplets, Plus } from "lucide-react";
 
 import { DashboardShell } from "@/components/dashboard-shell";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { waterRecords } from "@/lib/mock-db";
 
 export default function WaterPage() {
@@ -18,11 +24,16 @@ export default function WaterPage() {
                 <Droplets className="h-5 w-5" />
               </div>
               <div>
-              <CardTitle>Hydration target</CardTitle>
-              <CardDescription>Customize your daily goal to fit your routine.</CardDescription>
+                <CardTitle>Hydration target</CardTitle>
+                <CardDescription>
+                  Customize your daily goal to fit your routine.
+                </CardDescription>
               </div>
             </div>
-            <Button variant="outline" className="w-full border-cyan-200 bg-white sm:w-auto dark:border-cyan-900 dark:bg-slate-900">
+            <Button
+              variant="outline"
+              className="w-full border-cyan-200 bg-white sm:w-auto dark:border-cyan-900 dark:bg-slate-900"
+            >
               <Plus className="h-4 w-4" />
               Add water
             </Button>
@@ -31,8 +42,15 @@ export default function WaterPage() {
         <CardContent className="space-y-5">
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-4xl font-semibold tracking-tight">{total}<span className="ml-1 text-xl font-medium text-slate-500 dark:text-slate-400">ml</span></p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Daily intake</p>
+              <p className="text-4xl font-semibold tracking-tight">
+                {total}
+                <span className="ml-1 text-xl font-medium text-slate-500 dark:text-slate-400">
+                  ml
+                </span>
+              </p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                Daily intake
+              </p>
             </div>
             <div className="rounded-md bg-cyan-100 px-3 py-1.5 text-sm font-semibold text-cyan-800 dark:bg-cyan-950/40 dark:text-cyan-200">
               68% of goal
@@ -52,7 +70,11 @@ export default function WaterPage() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {[150, 250, 500].map((amount) => (
-              <Button key={amount} variant="secondary" className="justify-center border border-cyan-100 bg-cyan-50 text-cyan-800 hover:bg-cyan-100 dark:border-cyan-900 dark:bg-cyan-950/30 dark:text-cyan-200 dark:hover:bg-cyan-950/60">
+              <Button
+                key={amount}
+                variant="secondary"
+                className="justify-center border border-cyan-100 bg-cyan-50 text-cyan-800 hover:bg-cyan-100 dark:border-cyan-900 dark:bg-cyan-950/30 dark:text-cyan-200 dark:hover:bg-cyan-950/60"
+              >
                 +{amount}ml
               </Button>
             ))}
@@ -68,18 +90,30 @@ export default function WaterPage() {
             </div>
             <div>
               <CardTitle>Water history</CardTitle>
-              <CardDescription>Recent entries and intake trends.</CardDescription>
+              <CardDescription>
+                Recent entries and intake trends.
+              </CardDescription>
             </div>
           </div>
         </CardHeader>
         <CardContent className="space-y-3">
           {waterRecords.map((record) => (
-            <div key={record.id} className="flex items-center justify-between rounded-md border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800/60">
+            <div
+              key={record.id}
+              className="flex items-center justify-between rounded-md border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800/60"
+            >
               <div>
                 <p className="font-medium">{record.amount}ml</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">{new Date(record.date).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  {new Date(record.date).toLocaleTimeString([], {
+                    hour: "numeric",
+                    minute: "2-digit",
+                  })}
+                </p>
               </div>
-              <span className="rounded-full bg-slate-200 px-2 py-1 text-xs dark:bg-slate-700">{record.unit}</span>
+              <span className="rounded-full bg-slate-200 px-2 py-1 text-xs dark:bg-slate-700">
+                {record.unit}
+              </span>
             </div>
           ))}
         </CardContent>
