@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-emerald-50/70 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30 dark:text-slate-50">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-slate-100 to-emerald-50/70 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30 dark:text-slate-50">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-md bg-emerald-600 text-lg font-semibold text-white shadow-sm dark:bg-emerald-500 dark:text-slate-950">
@@ -52,7 +52,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4">
-            <div className="rounded-md bg-gradient-to-br from-slate-900 to-emerald-950 p-5 text-white dark:from-slate-800 dark:to-emerald-950">
+            <div className="rounded-md bg-linear-to-br from-slate-900 to-emerald-950 p-5 text-white dark:from-slate-800 dark:to-emerald-950">
               <p className="text-sm text-slate-300">Today</p>
               <div className="mt-3 flex items-end justify-between">
                 <div>

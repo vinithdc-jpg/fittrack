@@ -37,7 +37,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 via-slate-100 to-emerald-50/70 px-4 py-12 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30">
+    <div className="flex min-h-screen items-center justify-center bg-linear-to-br from-slate-50 via-slate-100 to-emerald-50/70 px-4 py-12 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30">
       <Card className="w-full max-w-md border-slate-200 shadow-xl shadow-slate-200/60 dark:border-slate-800 dark:shadow-black/20">
         <CardHeader>
           <CardTitle className="text-2xl">Welcome back</CardTitle>

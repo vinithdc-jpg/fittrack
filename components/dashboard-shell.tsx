@@ -24,7 +24,7 @@ export function DashboardShell({
   title: string;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-emerald-50/50 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/20 dark:text-slate-50">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-slate-100 to-emerald-50/50 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/20 dark:text-slate-50">
       <div className="mx-auto flex max-w-7xl gap-6 px-4 py-4 md:px-6 md:py-6 lg:px-8">
         <aside className="hidden w-72 shrink-0 rounded-md border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:block">
           <div className="mb-8 flex items-center gap-3">

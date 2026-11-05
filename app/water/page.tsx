@@ -10,7 +10,7 @@ export default function WaterPage() {
 
   return (
     <DashboardShell title="Water">
-      <Card className="overflow-hidden border-cyan-100 bg-gradient-to-br from-white to-cyan-50/70 dark:border-cyan-950 dark:from-slate-900 dark:to-cyan-950/20">
+      <Card className="overflow-hidden border-cyan-100 bg-linear-to-br from-white to-cyan-50/70 dark:border-cyan-950 dark:from-slate-900 dark:to-cyan-950/20">
         <CardHeader>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
