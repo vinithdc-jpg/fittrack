@@ -1,0 +1,3332 @@
+%PDF-1.4
+%FitTrack guide
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 8 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 1796 >>
+stream
+q
+0.035 0.15 0.18 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 782 612 10 re
+f
+Q
+q
+0.05 0.22 0.24 rg
+
+400 482 212 310 re
+f
+Q
+q
+0.04 0.31 0.27 rg
+
+452 292 160 210 re
+f
+Q
+BT
+0.57 0.9 0.76 rg
+/F2 10 Tf
+1 0 0 1 52 726 Tm
+(FITTRACK) Tj
+ET
+BT
+1 1 1 rg
+/F2 34 Tf
+1 0 0 1 52 624 Tm
+(PROJECT) Tj
+ET
+BT
+1 1 1 rg
+/F2 34 Tf
+1 0 0 1 52 581 Tm
+(ARCHITECTURE) Tj
+ET
+BT
+1 1 1 rg
+/F2 34 Tf
+1 0 0 1 52 538 Tm
+(GUIDE) Tj
+ET
+BT
+0.82 0.89 0.89 rg
+/F1 12 Tf
+1 0 0 1 54 497 Tm
+(A visual tour of the app, its APIs,) Tj
+ET
+BT
+0.82 0.89 0.89 rg
+/F1 12 Tf
+1 0 0 1 54 478 Tm
+(data model, and end-to-end flows.) Tj
+ET
+q
+0.25 0.42 0.43 rg
+
+52 431 508 1 re
+f
+Q
+q
+0.12 0.34 0.31 rg
+
+52 384 90 20 re
+f
+Q
+BT
+0.69 0.95 0.79 rg
+/F2 8 Tf
+1 0 0 1 61 390 Tm
+(HLD + LLD) Tj
+ET
+q
+0.12 0.34 0.31 rg
+
+150 384 112 20 re
+f
+Q
+BT
+0.69 0.95 0.79 rg
+/F2 8 Tf
+1 0 0 1 159 390 Tm
+(ROUTES + APIs) Tj
+ET
+q
+0.12 0.34 0.31 rg
+
+270 384 95 20 re
+f
+Q
+BT
+0.69 0.95 0.79 rg
+/F2 8 Tf
+1 0 0 1 279 390 Tm
+(DATA FLOWS) Tj
+ET
+BT
+0.68 0.78 0.79 rg
+/F1 9 Tf
+1 0 0 1 52 329 Tm
+(Built from the project README) Tj
+ET
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 52 308 Tm
+(Next.js 16  |  React 19  |  TypeScript  |  Tailwind CSS 4) Tj
+ET
+q
+0.1 0.25 0.26 rg
+
+52 128 508 116 re
+f
+Q
+q
+0.95 0.67 0.28 rg
+
+52 128 4 116 re
+f
+Q
+BT
+1 0.76 0.42 rg
+/F2 9 Tf
+1 0 0 1 70 218 Tm
+(IMPORTANT: CURRENT APP STATUS) Tj
+ET
+BT
+1 1 1 rg
+/F1 9 Tf
+1 0 0 1 70 193 Tm
+(This is a functional UI prototype. Health records and users use) Tj
+ET
+BT
+1 1 1 rg
+/F1 9 Tf
+1 0 0 1 70 176 Tm
+(in-memory sample data. PostgreSQL/Prisma is described, but not) Tj
+ET
+BT
+1 1 1 rg
+/F1 9 Tf
+1 0 0 1 70 159 Tm
+(connected to the current page or API data flows.) Tj
+ET
+BT
+0.67 0.78 0.79 rg
+/F2 7.5 Tf
+1 0 0 1 52 42 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.67 0.78 0.79 rg
+/F2 7.5 Tf
+1 0 0 1 515 42 Tm
+(01 / 08) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 1796 >>
+stream
+q
+0.035 0.15 0.18 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 782 612 10 re
+f
+Q
+q
+0.05 0.22 0.24 rg
+
+400 482 212 310 re
+f
+Q
+q
+0.04 0.31 0.27 rg
+
+452 292 160 210 re
+f
+Q
+BT
+0.57 0.9 0.76 rg
+/F2 10 Tf
+1 0 0 1 52 726 Tm
+(FITTRACK) Tj
+ET
+BT
+1 1 1 rg
+/F2 34 Tf
+1 0 0 1 52 624 Tm
+(PROJECT) Tj
+ET
+BT
+1 1 1 rg
+/F2 34 Tf
+1 0 0 1 52 581 Tm
+(ARCHITECTURE) Tj
+ET
+BT
+1 1 1 rg
+/F2 34 Tf
+1 0 0 1 52 538 Tm
+(GUIDE) Tj
+ET
+BT
+0.82 0.89 0.89 rg
+/F1 12 Tf
+1 0 0 1 54 497 Tm
+(A visual tour of the app, its APIs,) Tj
+ET
+BT
+0.82 0.89 0.89 rg
+/F1 12 Tf
+1 0 0 1 54 478 Tm
+(data model, and end-to-end flows.) Tj
+ET
+q
+0.25 0.42 0.43 rg
+
+52 431 508 1 re
+f
+Q
+q
+0.12 0.34 0.31 rg
+
+52 384 90 20 re
+f
+Q
+BT
+0.69 0.95 0.79 rg
+/F2 8 Tf
+1 0 0 1 61 390 Tm
+(HLD + LLD) Tj
+ET
+q
+0.12 0.34 0.31 rg
+
+150 384 112 20 re
+f
+Q
+BT
+0.69 0.95 0.79 rg
+/F2 8 Tf
+1 0 0 1 159 390 Tm
+(ROUTES + APIs) Tj
+ET
+q
+0.12 0.34 0.31 rg
+
+270 384 95 20 re
+f
+Q
+BT
+0.69 0.95 0.79 rg
+/F2 8 Tf
+1 0 0 1 279 390 Tm
+(DATA FLOWS) Tj
+ET
+BT
+0.68 0.78 0.79 rg
+/F1 9 Tf
+1 0 0 1 52 329 Tm
+(Built from the project README) Tj
+ET
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 52 308 Tm
+(Next.js 16  |  React 19  |  TypeScript  |  Tailwind CSS 4) Tj
+ET
+q
+0.1 0.25 0.26 rg
+
+52 128 508 116 re
+f
+Q
+q
+0.95 0.67 0.28 rg
+
+52 128 4 116 re
+f
+Q
+BT
+1 0.76 0.42 rg
+/F2 9 Tf
+1 0 0 1 70 218 Tm
+(IMPORTANT: CURRENT APP STATUS) Tj
+ET
+BT
+1 1 1 rg
+/F1 9 Tf
+1 0 0 1 70 193 Tm
+(This is a functional UI prototype. Health records and users use) Tj
+ET
+BT
+1 1 1 rg
+/F1 9 Tf
+1 0 0 1 70 176 Tm
+(in-memory sample data. PostgreSQL/Prisma is described, but not) Tj
+ET
+BT
+1 1 1 rg
+/F1 9 Tf
+1 0 0 1 70 159 Tm
+(connected to the current page or API data flows.) Tj
+ET
+BT
+0.67 0.78 0.79 rg
+/F2 7.5 Tf
+1 0 0 1 52 42 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.67 0.78 0.79 rg
+/F2 7.5 Tf
+1 0 0 1 515 42 Tm
+(01 / 08) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 5280 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(01 / HLD) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(How FitTrack fits together) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(Think of the system as a browser UI, route handlers, and demo data.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 668 Tm
+(The big picture) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.5 Tf
+1 0 0 1 44 649 Tm
+(Solid arrows show behavior implemented now. The database connection is only a target design.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 558 116 68 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 558 4 68 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 57 608 Tm
+(BROWSER) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 591 Tm
+(Pages + forms) Tj
+ET
+q
+0.04 0.48 0.36 RG 0.8 w
+161 592 m 171 592 l S
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 8 Tf
+1 0 0 1 164 595 Tm
+(>) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+173 558 116 68 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+173 558 4 68 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 186 608 Tm
+(NEXT.JS) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 186 591 Tm
+(App Router) Tj
+ET
+q
+0.04 0.48 0.36 RG 0.8 w
+290 592 m 300 592 l S
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 8 Tf
+1 0 0 1 293 595 Tm
+(>) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+302 558 116 68 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+302 558 4 68 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 315 608 Tm
+(ROUTES) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 315 591 Tm
+(Login + register) Tj
+ET
+q
+0.04 0.48 0.36 RG 0.8 w
+419 592 m 429 592 l S
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 8 Tf
+1 0 0 1 422 595 Tm
+(>) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+431 558 116 68 re
+B
+Q
+q
+0.68 0.38 0.06 rg
+
+431 558 4 68 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 444 608 Tm
+(MOCK STORE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 444 591 Tm
+(In-memory data) Tj
+ET
+q
+1 0.96 0.86 rg
+
+44 488 524 51 re
+f
+Q
+q
+0.68 0.38 0.06 rg
+
+44 488 4 51 re
+f
+Q
+BT
+0.68 0.38 0.06 rg
+/F2 8.3 Tf
+1 0 0 1 57 524 Tm
+(The persistence boundary) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 510 Tm
+(Prisma describes PostgreSQL tables, but active pages and handlers do not instantiate Prisma) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 499 Tm
+(Client. Data written to the mock user array is process-local.) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 476 Tm
+(Three kinds of runtime work) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 365 164 92 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 365 4 92 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 57 439 Tm
+(1. PAGE RENDERING) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 422 Tm
+(Feature pages import sample) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 412 Tm
+(records and render summaries.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 402 Tm
+(No health-record API calls.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+224 365 164 92 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+224 365 4 92 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 237 439 Tm
+(2. FORM REQUESTS) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 237 422 Tm
+(Login/register send JSON to) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 237 412 Tm
+(route handlers. Zod validates) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 237 402 Tm
+(incoming payloads.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+404 365 164 92 re
+B
+Q
+q
+0.38 0.29 0.6 rg
+
+404 365 4 92 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 417 439 Tm
+(3. BROWSER THEME) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 417 422 Tm
+(ThemeToggle updates <html>,) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 417 412 Tm
+(stores local preference, and) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 417 402 Tm
+(uses OS preference by default.) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 345 Tm
+(Implemented vs intended) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 292 512 34 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 306 Tm
+(Implemented today) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 299 306 Tm
+(Intended / schema direction) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 258 512 34 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 272 Tm
+(Server-rendered pages with sample data) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 299 272 Tm
+(Persistent per-user records in PostgreSQL) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 224 512 34 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 238 Tm
+(Registration and credential checks in memory) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 299 238 Tm
+(Prisma-backed account and health data) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 190 512 34 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 204 Tm
+(NextAuth handler with JWT option) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 299 204 Tm
+(Forms using real session + protected routes) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 156 512 34 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 170 Tm
+(Browser theme preference) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 299 170 Tm
+(Per-account theme sync \(not wired\)) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(02 / 08) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 5011 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(02 / ROUTE MAP) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(Pages and shared UI) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(A route is a URL. Most health routes share a shell and load demo records.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 668 Tm
+(Public and account pages) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 613 512 36 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 628 Tm
+(URL) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 134 628 Tm
+(What a user sees) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 284 628 Tm
+(Current behavior) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 577 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 592 Tm
+(/) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 592 Tm
+(Landing page) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 592 Tm
+(Static feature preview) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 541 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 556 Tm
+(/login) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 556 Tm
+(Sign-in form) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 556 Tm
+(POST /api/login; navigate on success) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 505 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 520 Tm
+(/register) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 520 Tm
+(Profile + account form) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 520 Tm
+(Register, then call login endpoint) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 469 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 484 Tm
+(/dashboard) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 484 Tm
+(Daily overview) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 484 Tm
+(Summary cards, charts, reminders, samples) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 454 Tm
+(Health feature pages) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 404 512 31 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 416.5 Tm
+(URL) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 134 416.5 Tm
+(Focus) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 284 416.5 Tm
+(Data / interaction status) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 373 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 385.5 Tm
+(/workouts) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 385.5 Tm
+(Sessions and exercises) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 385.5 Tm
+(Sample workouts; no write endpoint) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 342 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 354.5 Tm
+(/water) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 354.5 Tm
+(Intake and history) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 354.5 Tm
+(Quick-add is visual only) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 311 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 323.5 Tm
+(/sleep) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 323.5 Tm
+(Duration and quality) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 323.5 Tm
+(Sample records and trend) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 280 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 292.5 Tm
+(/nutrition) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 292.5 Tm
+(Calories and macros) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 292.5 Tm
+(Sample meals and calculated totals) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 249 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 261.5 Tm
+(/activity) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 261.5 Tm
+(Steps and active time) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 261.5 Tm
+(Sample activity logs) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 218 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 230.5 Tm
+(/habits) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 230.5 Tm
+(Streaks and completion) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 230.5 Tm
+(Sample habits) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 187 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 199.5 Tm
+(/profile) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 134 199.5 Tm
+(Profile preferences) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 284 199.5 Tm
+(Sample user; save is not persisted) Tj
+ET
+q
+1 0.93 0.92 rg
+
+44 122 524 51 re
+f
+Q
+q
+0.66 0.19 0.18 rg
+
+44 122 4 51 re
+f
+Q
+BT
+0.66 0.19 0.18 rg
+/F2 8.3 Tf
+1 0 0 1 57 158 Tm
+(Navigation is not authorization) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 144 Tm
+(Dashboard and feature routes are directly accessible. The app does not currently enforce a) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 133 Tm
+(signed-in session before rendering them.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(03 / 08) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 4474 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(03 / API CONTRACTS) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(Endpoints at a glance) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(Two custom JSON endpoints and one NextAuth protocol route.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 580 252 88 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 580 4 88 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 57 650 Tm
+(POST /api/register) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 633 Tm
+(Zod validates profile fields.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 623 Tm
+(Bcrypt hashes password.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 613 Tm
+(Adds user to in-memory array.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+312 580 256 88 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+312 580 4 88 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 325 650 Tm
+(POST /api/login) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 325 633 Tm
+(Validates email/password.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 325 623 Tm
+(Looks up user; compares bcrypt.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 325 613 Tm
+(Returns profile summary on success.) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 524 512 36 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 539 Tm
+(Endpoint) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 226 539 Tm
+(Success) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 371 539 Tm
+(Common errors) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 488 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 503 Tm
+(POST /api/register) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 226 503 Tm
+(200: { ok, user }) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 371 503 Tm
+(400: validation or duplicate) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 452 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 467 Tm
+(POST /api/login) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 226 467 Tm
+(200: { ok, user }) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 371 467 Tm
+(400 input; 401 credentials; 500 error) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 416 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 431 Tm
+(NextAuth GET) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 226 431 Tm
+(Session/provider protocol) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 371 431 Tm
+(NextAuth-defined behavior) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 380 512 36 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 395 Tm
+(NextAuth POST) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 226 395 Tm
+(Sign-in/callback/sign-out) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 371 395 Tm
+(NextAuth-defined behavior) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 365 Tm
+(Registration request example) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 244 524 102 re
+f
+Q
+BT
+0.78 0.9 0.86 rg
+/F1 7.6 Tf
+1 0 0 1 57 327 Tm
+({) Tj
+ET
+BT
+0.78 0.9 0.86 rg
+/F1 7.6 Tf
+1 0 0 1 57 312 Tm
+(  "name": "Ava Thompson", "email": "ava@example.com",) Tj
+ET
+BT
+0.78 0.9 0.86 rg
+/F1 7.6 Tf
+1 0 0 1 57 297 Tm
+(  "password": "password123", "dateOfBirth": "1996-08-14",) Tj
+ET
+BT
+0.78 0.9 0.86 rg
+/F1 7.6 Tf
+1 0 0 1 57 282 Tm
+(  "height": 170, "initialWeight": 69, "preferredUnits": "metric",) Tj
+ET
+BT
+0.78 0.9 0.86 rg
+/F1 7.6 Tf
+1 0 0 1 57 267 Tm
+(  "goals": ["Build strength"], "activityPreferences": ["Running"]) Tj
+ET
+BT
+0.78 0.9 0.86 rg
+/F1 7.6 Tf
+1 0 0 1 57 252 Tm
+(}) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8 Tf
+1 0 0 1 44 228 Tm
+(Validation: name length >= 2; valid email; password length >= 8; positive height and weight; units metric or imperial.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8 Tf
+1 0 0 1 44 217 Tm
+(Goals/preferences default to empty arrays. Date of birth is checked only as a string.) Tj
+ET
+q
+1 0.96 0.86 rg
+
+44 152 524 51 re
+f
+Q
+q
+0.68 0.38 0.06 rg
+
+44 152 4 51 re
+f
+Q
+BT
+0.68 0.38 0.06 rg
+/F2 8.3 Tf
+1 0 0 1 57 188 Tm
+(Important authentication distinction) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 174 Tm
+(POST /api/login returns JSON only; it does not set a NextAuth JWT session. The forms call) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 163 Tm
+(this custom endpoint, not the NextAuth sign-in protocol.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(04 / 08) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 5698 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(04 / DATA FLOWS) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(What happens after submit?) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(Follow each step from user action to response.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 668 Tm
+(Registration: two requests, one redirect) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 584 119 65 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 624 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 52 632 Tm
+(1) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 78 632 Tm
+(Submit form) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 53 612 Tm
+(Browser sends profile) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 53 602 Tm
+(JSON.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+176 584 119 65 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+176 624 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 184 632 Tm
+(2) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 210 632 Tm
+(Validate) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 185 612 Tm
+(Zod checks request) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 185 602 Tm
+(fields.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+308 584 119 65 re
+B
+Q
+q
+0.38 0.29 0.6 rg
+
+308 624 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 316 632 Tm
+(3) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 342 632 Tm
+(Create demo user) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 317 612 Tm
+(Bcrypt hash; append) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 317 602 Tm
+(in memory.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+440 584 128 65 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+440 624 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 448 632 Tm
+(4) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 474 632 Tm
+(Verify login) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 449 612 Tm
+(Form posts credentials) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 449 602 Tm
+(again.) Tj
+ET
+q
+0.04 0.48 0.36 RG 0.8 w
+163 617 m 174 617 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+295 617 m 306 617 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+427 617 m 438 617 l S
+Q
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 498 252 65 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 538 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 52 546 Tm
+(5) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 78 546 Tm
+(Navigate) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 53 526 Tm
+(On login 200, go to /dashboard.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+316 498 252 65 re
+B
+Q
+q
+0.68 0.38 0.06 rg
+
+316 538 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 324 546 Tm
+(!) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 350 546 Tm
+(No session cookie) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 325 526 Tm
+(This flow does not create NextAuth session.) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 472 Tm
+(Login: credential verification) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 388 119 65 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 428 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 52 436 Tm
+(1) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 78 436 Tm
+(Submit) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 53 416 Tm
+(POST email +) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 53 406 Tm
+(password.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+176 388 119 65 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+176 428 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 184 436 Tm
+(2) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 210 436 Tm
+(Validate) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 185 416 Tm
+(Zod checks email and) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 185 406 Tm
+(length.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+308 388 119 65 re
+B
+Q
+q
+0.38 0.29 0.6 rg
+
+308 428 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 316 436 Tm
+(3) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 342 436 Tm
+(Find user) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 317 416 Tm
+(Case-insensitive mock) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 317 406 Tm
+(lookup.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+440 388 128 65 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+440 428 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 448 436 Tm
+(4) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 474 436 Tm
+(Compare) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 449 416 Tm
+(bcrypt verifies) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 449 406 Tm
+(password.) Tj
+ET
+q
+0.04 0.48 0.36 RG 0.8 w
+163 421 m 174 421 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+295 421 m 306 421 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+427 421 m 438 421 l S
+Q
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 302 252 65 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 342 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 52 350 Tm
+(200) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 78 350 Tm
+(Redirect) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 53 330 Tm
+(Client routes to dashboard.) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+316 302 252 65 re
+B
+Q
+q
+0.66 0.19 0.18 rg
+
+316 342 25 25 re
+f
+Q
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 324 350 Tm
+(401) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 8 Tf
+1 0 0 1 350 350 Tm
+(No account / mismatch) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7 Tf
+1 0 0 1 325 330 Tm
+(Same response avoids account detail leak.) Tj
+ET
+q
+0.91 0.95 0.98 rg
+
+44 228 524 51 re
+f
+Q
+q
+0.12 0.38 0.58 rg
+
+44 228 4 51 re
+f
+Q
+BT
+0.12 0.38 0.58 rg
+/F2 8.3 Tf
+1 0 0 1 57 264 Tm
+(Feature page path) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 250 Tm
+(Request page > server component imports sample data > calculates display values > renders) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 239 Tm
+(shared shell and HTML. No resource API or database is called.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(05 / 08) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 4534 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(05 / LLD) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(Code layout and responsibilities) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(Use this map to find where a behavior lives.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 668 Tm
+(Repository map) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 444 524 205 re
+f
+Q
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 627 Tm
+(app/) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 627 Tm
+(URL routes, pages, API handlers, root layout) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 607 Tm
+(  api/login/route.ts) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 607 Tm
+(Custom credential verification) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 587 Tm
+(  api/register/route.ts) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 587 Tm
+(Validated demo account creation) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 567 Tm
+(  api/auth/[...nextauth]/route.ts) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 567 Tm
+(NextAuth credentials and JWT config) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 547 Tm
+(components/) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 547 Tm
+(DashboardShell, ThemeToggle, reusable UI) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 527 Tm
+(components/ui/) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 527 Tm
+(Button, Card, Input, Label, Badge, etc.) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 507 Tm
+(lib/mock-db.ts) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 507 Tm
+(Sample records + in-memory user helpers) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 487 Tm
+(lib/utils.ts) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 487 Tm
+(cn\(\): merge classes and Tailwind utilities) Tj
+ET
+BT
+0.68 0.94 0.8 rg
+/F2 7.6 Tf
+1 0 0 1 57 467 Tm
+(prisma/schema.prisma) Tj
+ET
+BT
+1 1 1 rg
+/F1 7.5 Tf
+1 0 0 1 238 467 Tm
+(PostgreSQL model definitions; not wired) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 421 Tm
+(Component behavior) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 370 512 32 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 383 Tm
+(Unit) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 169 383 Tm
+(Responsibility) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 374 383 Tm
+(Notes) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 338 512 32 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 351 Tm
+(DashboardShell) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 169 351 Tm
+(Shared sidebar/header/mobile nav) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 374 351 Tm
+(Wraps health routes) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 306 512 32 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 319 Tm
+(ThemeToggle) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 169 319 Tm
+(OS preference + localStorage) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 374 319 Tm
+(Sets .dark class on html) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 274 512 32 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 287 Tm
+(UI primitives) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 169 287 Tm
+(Consistent controls and surfaces) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 374 287 Tm
+(Tailwind via cn\(\)) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 242 512 32 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 255 Tm
+(Page components) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 169 255 Tm
+(Read/format sample records) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 374 255 Tm
+(Mostly server components) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 210 512 32 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 223 Tm
+(Login/Register) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 169 223 Tm
+(Client state, fetch, errors, routing) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 374 223 Tm
+(Call custom JSON APIs) Tj
+ET
+q
+0.91 0.95 0.98 rg
+
+44 146 524 51 re
+f
+Q
+q
+0.12 0.38 0.58 rg
+
+44 146 4 51 re
+f
+Q
+BT
+0.12 0.38 0.58 rg
+/F2 8.3 Tf
+1 0 0 1 57 182 Tm
+(Server vs client) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 168 Tm
+(Pages render on the server when they do not need browser state. Forms manage interactive) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 157 Tm
+(state. ThemeToggle is client-side because it reads localStorage and changes the document.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(06 / 08) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 5877 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(06 / DATA MODEL) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(The planned relational shape) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(The Prisma schema captures which health records belong to a user.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 668 Tm
+(Entity relationship map) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8 Tf
+1 0 0 1 44 649 Tm
+(Each user owns their logs. A workout has exercises; a habit has completion records.) Tj
+ET
+q
+0.88 0.96 0.92 rg
+0.84 0.88 0.89 RG 0.7 w
+224 583 156 52 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+224 583 4 52 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 237 617 Tm
+(USER) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 237 600 Tm
+(Account + preferences) Tj
+ET
+q
+0.91 0.95 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 492 124 56 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+44 492 4 56 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 57 530 Tm
+(WORKOUT) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 513 Tm
+(User-owned session) Tj
+ET
+q
+0.95 0.93 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+179 492 124 56 re
+B
+Q
+q
+0.38 0.29 0.6 rg
+
+179 492 4 56 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 192 530 Tm
+(MEAL) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 192 513 Tm
+(Macros + meal type) Tj
+ET
+q
+0.91 0.95 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+314 492 124 56 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+314 492 4 56 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 327 530 Tm
+(SLEEP) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 327 513 Tm
+(Start/end + quality) Tj
+ET
+q
+0.91 0.95 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+449 492 119 56 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+449 492 4 56 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 462 530 Tm
+(WATER) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 462 513 Tm
+(Amount + date) Tj
+ET
+q
+0.04 0.48 0.36 RG 0.8 w
+302 583 m 106 548 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+302 583 m 241 548 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+302 583 m 376 548 l S
+Q
+q
+0.04 0.48 0.36 RG 0.8 w
+302 583 m 509 548 l S
+Q
+q
+1 0.96 0.86 rg
+0.84 0.88 0.89 RG 0.7 w
+74 420 140 51 re
+B
+Q
+q
+0.68 0.38 0.06 rg
+
+74 420 4 51 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 87 453 Tm
+(EXERCISE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 87 436 Tm
+(Belongs to workout) Tj
+ET
+q
+0.95 0.93 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+234 420 140 51 re
+B
+Q
+q
+0.38 0.29 0.6 rg
+
+234 420 4 51 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 247 453 Tm
+(HABIT) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 247 436 Tm
+(User-owned routine) Tj
+ET
+q
+0.91 0.95 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+394 420 174 51 re
+B
+Q
+q
+0.12 0.38 0.58 rg
+
+394 420 4 51 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 407 453 Tm
+(ACTIVITY LOG) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 407 436 Tm
+(Steps + energy) Tj
+ET
+q
+0.68 0.38 0.06 RG 0.8 w
+106 492 m 144 471 l S
+Q
+q
+0.38 0.29 0.6 RG 0.8 w
+302 583 m 304 471 l S
+Q
+q
+0.12 0.38 0.58 RG 0.8 w
+302 583 m 481 471 l S
+Q
+BT
+0.38 0.29 0.6 rg
+/F2 7.4 Tf
+1 0 0 1 262 402 Tm
+(HabitCompletion) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 347 512 31 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 359.5 Tm
+(Model) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 181 359.5 Tm
+(Key fields \(simplified\)) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 427 359.5 Tm
+(Relationship) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 316 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 328.5 Tm
+(User) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 181 328.5 Tm
+(name, unique email, hash, units, theme) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 427 328.5 Tm
+(Parent for health records) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 285 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 297.5 Tm
+(Workout / Exercise) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 181 297.5 Tm
+(title, duration / name, sets, reps, weight) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 427 297.5 Tm
+(Workout has exercises) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 254 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 266.5 Tm
+(Meal) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 181 266.5 Tm
+(calories, protein, carbs, fats, consumedAt) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 427 266.5 Tm
+(Belongs to user) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 223 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 235.5 Tm
+(Sleep / Water) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 181 235.5 Tm
+(sleep start/end, quality / amount, date) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 427 235.5 Tm
+(Belongs to user) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 192 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 204.5 Tm
+(Habit / Completion) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 181 204.5 Tm
+(title, frequency / date, completed) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 427 204.5 Tm
+(Habit has completions) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 161 512 31 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 173.5 Tm
+(Measurement / Activity) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 181 173.5 Tm
+(weight, waist / steps, distance, minutes) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 427 173.5 Tm
+(Belongs to user) Tj
+ET
+q
+1 0.96 0.86 rg
+
+44 98 524 51 re
+f
+Q
+q
+0.68 0.38 0.06 rg
+
+44 98 4 51 re
+f
+Q
+BT
+0.68 0.38 0.06 rg
+/F2 8.3 Tf
+1 0 0 1 57 134 Tm
+(Schema != runtime database) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 120 Tm
+(PostgreSQL uses DATABASE_URL and models have CUID IDs, but there is no Prisma Client) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 109 Tm
+(integration or migration flow in the current app.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(07 / 08) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 4072 >>
+stream
+q
+0.97 0.98 0.98 rg
+
+0 0 612 792 re
+f
+Q
+q
+0.04 0.48 0.36 rg
+
+0 784 612 8 re
+f
+Q
+BT
+0.04 0.48 0.36 rg
+/F2 7.5 Tf
+1 0 0 1 44 761 Tm
+(FITTRACK  /  PROJECT GUIDE) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7.5 Tf
+1 0 0 1 452 761 Tm
+(07 / OPERATIONS) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 21 Tf
+1 0 0 1 44 726 Tm
+(Run it, then understand its limits) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 8.6 Tf
+1 0 0 1 44 706 Tm
+(A quick start plus a short path from demo to persistent product.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 689 m 568 689 l S
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 668 Tm
+(Local quick-start) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 583 524 66 re
+f
+Q
+BT
+0.78 0.92 0.86 rg
+/F2 9 Tf
+1 0 0 1 59 625 Tm
+(npm install) Tj
+ET
+BT
+0.78 0.92 0.86 rg
+/F2 9 Tf
+1 0 0 1 59 603 Tm
+(npm run dev) Tj
+ET
+BT
+1 1 1 rg
+/F2 9 Tf
+1 0 0 1 254 613 Tm
+(Open http://localhost:3000) Tj
+ET
+q
+0.035 0.15 0.18 rg
+
+44 538 512 29 re
+f
+Q
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 49 549.5 Tm
+(Command) Tj
+ET
+BT
+1 1 1 rg
+/F2 7.2 Tf
+1 0 0 1 239 549.5 Tm
+(Purpose) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 509 512 29 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 520.5 Tm
+(npm run dev) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 239 520.5 Tm
+(Start local development server) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 480 512 29 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 491.5 Tm
+(npm run build) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 239 491.5 Tm
+(Build and type-check production app) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 451 512 29 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 462.5 Tm
+(npm run start) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 239 462.5 Tm
+(Serve the production build) Tj
+ET
+q
+0.97 0.98 0.98 rg
+0.84 0.88 0.89 RG 0.7 w
+44 422 512 29 re
+B
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7.1 Tf
+1 0 0 1 49 433.5 Tm
+(npm run lint) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.1 Tf
+1 0 0 1 239 433.5 Tm
+(Run ESLint) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 409 Tm
+(Demo account) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+44 338 252 52 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+44 338 4 52 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 57 372 Tm
+(EMAIL) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 57 355 Tm
+(demo@fittrack.app) Tj
+ET
+q
+1 1 1 rg
+0.84 0.88 0.89 RG 0.7 w
+316 338 252 52 re
+B
+Q
+q
+0.04 0.48 0.36 rg
+
+316 338 4 52 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F2 9 Tf
+1 0 0 1 329 372 Tm
+(PASSWORD) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.6 Tf
+1 0 0 1 329 355 Tm
+(demo123) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F2 12 Tf
+1 0 0 1 44 323 Tm
+(What is needed before production?) Tj
+ET
+q
+0.04 0.48 0.36 rg
+
+44 306 5 5 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F1 8.7 Tf
+1 0 0 1 58 304 Tm
+(Replace in-memory users with Prisma-backed PostgreSQL and migrations.) Tj
+ET
+q
+0.04 0.48 0.36 rg
+
+44 291 5 5 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F1 8.7 Tf
+1 0 0 1 58 289 Tm
+(Connect health pages to authenticated per-user read and write endpoints.) Tj
+ET
+q
+0.04 0.48 0.36 rg
+
+44 276 5 5 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F1 8.7 Tf
+1 0 0 1 58 274 Tm
+(Use NextAuth sign-in from forms and protect private routes with sessions.) Tj
+ET
+q
+0.68 0.38 0.06 rg
+
+44 261 5 5 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F1 8.7 Tf
+1 0 0 1 58 259 Tm
+(Set a strong NEXTAUTH_SECRET; remove development fallback and demo credentials.) Tj
+ET
+q
+0.04 0.48 0.36 rg
+
+44 246 5 5 re
+f
+Q
+BT
+0.09 0.16 0.22 rg
+/F1 8.7 Tf
+1 0 0 1 58 244 Tm
+(Add rate limiting, robust input/error policies, and production monitoring.) Tj
+ET
+q
+1 0.93 0.92 rg
+
+44 176 524 51 re
+f
+Q
+q
+0.66 0.19 0.18 rg
+
+44 176 4 51 re
+f
+Q
+BT
+0.66 0.19 0.18 rg
+/F2 8.3 Tf
+1 0 0 1 57 212 Tm
+(Environment variables) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 198 Tm
+(Prisma expects DATABASE_URL. NextAuth reads NEXTAUTH_SECRET but currently has a development) Tj
+ET
+BT
+0.09 0.16 0.22 rg
+/F1 7.5 Tf
+1 0 0 1 57 187 Tm
+(fallback. Never commit secrets.) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F1 7.5 Tf
+1 0 0 1 44 162 Tm
+(Source: project README and current source layout.) Tj
+ET
+q
+0.84 0.88 0.89 RG 0.8 w
+44 35 m 568 35 l S
+Q
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 44 17 Tm
+(FITTRACK  |  ARCHITECTURE & DATA FLOW) Tj
+ET
+BT
+0.36 0.43 0.49 rg
+/F2 7 Tf
+1 0 0 1 526 17 Tm
+(08 / 08) Tj
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000025 00000 n 
+0000000074 00000 n 
+0000000180 00000 n 
+0000000277 00000 n 
+0000000379 00000 n 
+0000002227 00000 n 
+0000002363 00000 n 
+0000004211 00000 n 
+0000004347 00000 n 
+0000009679 00000 n 
+0000009816 00000 n 
+0000014880 00000 n 
+0000015018 00000 n 
+0000019545 00000 n 
+0000019683 00000 n 
+0000025434 00000 n 
+0000025572 00000 n 
+0000030159 00000 n 
+0000030297 00000 n 
+0000036227 00000 n 
+0000036365 00000 n 
+0000040490 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+40628
+%%EOF

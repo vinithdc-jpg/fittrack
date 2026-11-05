@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String   @id @default(cuid())
+  name                String
+  email               String   @unique
+  passwordHash        String
+  dateOfBirth         DateTime?
+  heightCm            Float?
+  initialWeightKg     Float?
+  preferredUnits      String   @default("metric")
+  theme               String   @default("dark")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  workouts            Workout[]
+  meals               Meal[]
+  sleepRecords        SleepRecord[]
+  habits              Habit[]
+  waterEntries        WaterEntry[]
+  bodyMeasurements    BodyMeasurement[]
+  activityLogs        ActivityLog[]
+}
+
+model Workout {
+  id          String   @id @default(cuid())
+  title       String
+  category    String
+  durationMin Int
+  notes       String?
+  date        DateTime
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  exercises   Exercise[]
+}
+
+model Exercise {
+  id         String  @id @default(cuid())
+  name       String
+  sets       Int
+  reps       Int
+  weight     Float?
+  workoutId  String
+  workout    Workout @relation(fields: [workoutId], references: [id])
+}
+
+model Meal {
+  id          String   @id @default(cuid())
+  name        String
+  mealType    String
+  quantity    String
+  calories    Int
+  protein     Float
+  carbohydrates Float
+  fats        Float
+  consumedAt  DateTime
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model SleepRecord {
+  id          String   @id @default(cuid())
+  sleepStart  DateTime
+  sleepEnd    DateTime
+  quality     Int
+  notes       String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Habit {
+  id              String   @id @default(cuid())
+  title           String
+  description     String?
+  frequency       String
+  streak          Int      @default(0)
+  completionRate  Int      @default(0)
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  completions     HabitCompletion[]
+}
+
+model HabitCompletion {
+  id          String   @id @default(cuid())
+  date        DateTime
+  completed   Boolean
+  habitId     String
+  habit       Habit    @relation(fields: [habitId], references: [id])
+}
+
+model WaterEntry {
+  id          String   @id @default(cuid())
+  amountMl    Int
+  date        DateTime
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model BodyMeasurement {
+  id          String   @id @default(cuid())
+  date        DateTime
+  weight      Float
+  waist       Float?
+  chest       Float?
+  notes       String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model ActivityLog {
+  id             String   @id @default(cuid())
+  date           DateTime
+  activityType   String
+  steps          Int
+  distanceKm     Float?
+  activeMinutes  Int
+  caloriesBurned Int
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+}
