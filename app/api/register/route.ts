@@ -1,4 +1,3 @@
-import { randomUUID } from "node:crypto";
 import { hash } from "bcrypt";
 import { NextResponse } from "next/server";
 import { z } from "zod";
@@ -85,13 +84,12 @@ export async function POST(request: Request) {
     const passwordHash = await hash(password, 12);
     const result = await getDbPool().query(
       `INSERT INTO users
-        (id, name, email, password_hash, date_of_birth, height_cm, initial_weight_kg,
-         preferred_units, theme, created_at, updated_at)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'dark', NOW(), NOW())
+        (name, email, password_hash, date_of_birth, height_cm, initial_weight_kg,
+         preferred_units)
+       VALUES ($1, $2, $3, $4, $5, $6, $7)
        ON CONFLICT (email) DO NOTHING
        RETURNING id, name, email`,
       [
-        randomUUID(),
         name,
         email,
         passwordHash,
@@ -114,10 +112,28 @@ export async function POST(request: Request) {
       user: result.rows[0],
     });
   } catch (error) {
+    const databaseErrorCode =
+      error instanceof Error &&
+      "code" in error &&
+      typeof error.code === "string"
+        ? error.code
+        : undefined;
+
     console.error(
       "Registration failed",
-      error instanceof Error && "code" in error ? error.code : "unknown error",
+      databaseErrorCode ?? "unknown error",
     );
+
+    if (databaseErrorCode === "28P01") {
+      return NextResponse.json(
+        {
+          error:
+            "Database authentication failed. Check the username and password in DATABASE_URL.",
+        },
+        { status: 503 },
+      );
+    }
+
     return NextResponse.json(
       { error: "Unable to create your account right now" },
       { status: 500 },
