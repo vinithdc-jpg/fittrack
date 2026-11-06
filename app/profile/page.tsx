@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { mockUsers } from "@/lib/mock-db";
+import { mockProfiles } from "@/lib/mock-db";
 
 export default function ProfilePage() {
-  const user = mockUsers[0];
+  const user = mockProfiles[0];
 
   return (
     <DashboardShell title="Profile">

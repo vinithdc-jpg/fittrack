@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,15 +17,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const initialState = {
-  name: "Ava Thompson",
-  email: "ava@fittrack.app",
-  password: "password123",
-  dateOfBirth: "1996-08-14",
-  height: 170,
-  initialWeight: 69,
+  name: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+  termsAccepted: false,
+  dateOfBirth: "",
+  height: "",
+  initialWeight: "",
   preferredUnits: "metric",
-  goals: ["Build strength", "Improve sleep"],
-  activityPreferences: ["Strength", "Running"],
 };
 
 export default function RegisterPage() {
@@ -38,37 +39,48 @@ export default function RegisterPage() {
     setIsSubmitting(true);
     setError("");
 
-    const response = await fetch("/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          dateOfBirth: form.dateOfBirth || null,
+          height: form.height ? Number(form.height) : null,
+          initialWeight: form.initialWeight
+            ? Number(form.initialWeight)
+            : null,
+        }),
+      });
 
-    if (!response.ok) {
-      const payload = await response.json();
-      setError(
-        payload.error?.formErrors?.[0] ??
-          "Unable to create account. Please try again.",
-      );
+      if (!response.ok) {
+        const payload: { error?: string } = await response.json();
+        setError(payload.error ?? "Unable to create account. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      const loginResponse = await signIn("credentials", {
+        email: form.email,
+        password: form.password,
+        redirect: false,
+        callbackUrl: "/dashboard",
+      });
+
+      if (!loginResponse || loginResponse.error) {
+        setError(
+          "Your account was created, but we couldn't sign you in. Please sign in manually.",
+        );
+        setIsSubmitting(false);
+        return;
+      }
+
+      router.replace("/dashboard");
+      router.refresh();
+    } catch {
+      setError("Unable to create your account right now. Please try again.");
       setIsSubmitting(false);
-      return;
     }
-
-    const loginResponse = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: form.email, password: form.password }),
-    });
-
-    if (!loginResponse.ok) {
-      setError(
-        "Account created, but automatic sign-in failed. Please sign in manually.",
-      );
-      setIsSubmitting(false);
-      return;
-    }
-
-    router.push("/dashboard");
   }
 
   return (
@@ -86,6 +98,7 @@ export default function RegisterPage() {
               <Label htmlFor="name">Full name</Label>
               <Input
                 id="name"
+                autoComplete="name"
                 value={form.name}
                 onChange={(event) =>
                   setForm({ ...form, name: event.target.value })
@@ -98,6 +111,7 @@ export default function RegisterPage() {
               <Input
                 id="email"
                 type="email"
+                autoComplete="email"
                 value={form.email}
                 onChange={(event) =>
                   setForm({ ...form, email: event.target.value })
@@ -110,50 +124,70 @@ export default function RegisterPage() {
               <Input
                 id="password"
                 type="password"
+                autoComplete="new-password"
                 value={form.password}
                 onChange={(event) =>
                   setForm({ ...form, password: event.target.value })
                 }
+                minLength={8}
+                required
+              />
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Use at least 8 characters with uppercase, lowercase, and a
+                number.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword">Confirm password</Label>
+              <Input
+                id="confirmPassword"
+                type="password"
+                autoComplete="new-password"
+                value={form.confirmPassword}
+                onChange={(event) =>
+                  setForm({ ...form, confirmPassword: event.target.value })
+                }
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="dob">Date of birth</Label>
+              <Label htmlFor="dob">Date of birth (optional)</Label>
               <Input
                 id="dob"
                 type="date"
+                autoComplete="bday"
                 value={form.dateOfBirth}
                 onChange={(event) =>
                   setForm({ ...form, dateOfBirth: event.target.value })
                 }
-                required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="height">Height (cm)</Label>
+              <Label htmlFor="height">Height in cm (optional)</Label>
               <Input
                 id="height"
                 type="number"
+                min="1"
+                max="300"
+                step="0.1"
                 value={form.height}
                 onChange={(event) =>
-                  setForm({ ...form, height: Number(event.target.value) })
+                  setForm({ ...form, height: event.target.value })
                 }
-                required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="weight">Initial weight (kg)</Label>
+              <Label htmlFor="weight">Initial weight in kg (optional)</Label>
               <Input
                 id="weight"
                 type="number"
+                min="1"
+                max="1000"
+                step="0.1"
                 value={form.initialWeight}
                 onChange={(event) =>
-                  setForm({
-                    ...form,
-                    initialWeight: Number(event.target.value),
-                  })
+                  setForm({ ...form, initialWeight: event.target.value })
                 }
-                required
               />
             </div>
             <div className="space-y-2 md:col-span-2">
@@ -173,40 +207,22 @@ export default function RegisterPage() {
                 <option value="imperial">Imperial</option>
               </select>
             </div>
-            <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="goals">Fitness goals</Label>
-              <Input
-                id="goals"
-                value={form.goals.join(", ")}
+            <label className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300 md:col-span-2">
+              <input
+                type="checkbox"
+                checked={form.termsAccepted}
                 onChange={(event) =>
-                  setForm({
-                    ...form,
-                    goals: event.target.value
-                      .split(",")
-                      .map((goal) => goal.trim())
-                      .filter(Boolean),
-                  })
+                  setForm({ ...form, termsAccepted: event.target.checked })
                 }
+                required
+                className="mt-1 h-4 w-4 rounded border-slate-300 accent-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
               />
-            </div>
-            <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="activities">Activity preferences</Label>
-              <Input
-                id="activities"
-                value={form.activityPreferences.join(", ")}
-                onChange={(event) =>
-                  setForm({
-                    ...form,
-                    activityPreferences: event.target.value
-                      .split(",")
-                      .map((activity) => activity.trim())
-                      .filter(Boolean),
-                  })
-                }
-              />
-            </div>
+              <span>I accept the terms and conditions.</span>
+            </label>
             {error ? (
-              <p className="md:col-span-2 text-sm text-rose-600">{error}</p>
+              <p role="alert" className="md:col-span-2 text-sm text-rose-600">
+                {error}
+              </p>
             ) : null}
             <div className="md:col-span-2">
               <Button type="submit" className="w-full" disabled={isSubmitting}>

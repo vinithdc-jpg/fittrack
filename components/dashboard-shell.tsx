@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LogoutButton } from "@/components/logout-button";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -97,6 +98,7 @@ export function DashboardShell({
                 Log entry
               </Button>
               <ThemeToggle />
+              <LogoutButton />
             </div>
           </header>
 

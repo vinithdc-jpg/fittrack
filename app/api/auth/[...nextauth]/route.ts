@@ -2,12 +2,13 @@ import NextAuth, { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
 
-import { findUserByEmail } from "@/lib/mock-db";
+import { getDbPool } from "@/lib/db";
 
 export const authOptions: NextAuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET ?? "fittrack-dev-secret",
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60,
   },
   pages: {
     signIn: "/login",
@@ -27,12 +28,24 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        const user = findUserByEmail(email);
+        const result = await getDbPool().query<{
+          id: string;
+          name: string;
+          email: string;
+          password_hash: string;
+        }>(
+          `SELECT id, name, email, password_hash
+           FROM users
+           WHERE lower(email) = $1
+           LIMIT 1`,
+          [email.trim().toLowerCase()],
+        );
+        const user = result.rows[0];
         if (!user) {
           return null;
         }
 
-        const validPassword = await compare(password, user.passwordHash);
+        const validPassword = await compare(password, user.password_hash);
         if (!validPassword) {
           return null;
         }

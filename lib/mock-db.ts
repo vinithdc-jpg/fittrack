@@ -1,5 +1,3 @@
-import { hashSync } from "bcrypt";
-
 export type ThemeMode = "light" | "dark";
 export type PreferredUnits = "metric" | "imperial";
 export type WorkoutCategory =
@@ -17,7 +15,6 @@ export type UserProfile = {
   id: string;
   name: string;
   email: string;
-  passwordHash: string;
   dateOfBirth: string;
   height: number;
   initialWeight: number;
@@ -107,12 +104,11 @@ export type ActivityRecord = {
   calories: number;
 };
 
-export const mockUsers: UserProfile[] = [
+export const mockProfiles: UserProfile[] = [
   {
     id: "user-1",
     name: "Maya Chen",
-    email: "demo@fittrack.app",
-    passwordHash: hashSync("demo123", 10),
+    email: "maya@example.test",
     dateOfBirth: "1994-05-19",
     height: 168,
     initialWeight: 68,
@@ -306,47 +302,6 @@ export const weeklyTrend = [
   { day: "Sat", steps: 10400, calories: 610, sleep: 8.3 },
   { day: "Sun", steps: 8421, calories: 470, sleep: 7.6 },
 ];
-
-export function findUserByEmail(email: string) {
-  return mockUsers.find(
-    (user) => user.email.toLowerCase() === email.toLowerCase(),
-  );
-}
-
-export function registerUser(data: {
-  name: string;
-  email: string;
-  password: string;
-  dateOfBirth: string;
-  height: number;
-  initialWeight: number;
-  preferredUnits: PreferredUnits;
-  goals: string[];
-  activityPreferences: string[];
-}) {
-  const existing = findUserByEmail(data.email);
-
-  if (existing) {
-    throw new Error("User already exists");
-  }
-
-  const user: UserProfile = {
-    id: `user-${Date.now()}`,
-    name: data.name,
-    email: data.email,
-    passwordHash: hashSync(data.password, 10),
-    dateOfBirth: data.dateOfBirth,
-    height: data.height,
-    initialWeight: data.initialWeight,
-    preferredUnits: data.preferredUnits,
-    goals: data.goals,
-    activityPreferences: data.activityPreferences,
-    theme: "dark",
-  };
-
-  mockUsers.push(user);
-  return user;
-}
 
 export const dashboardStats = {
   todaysSteps: 8421,

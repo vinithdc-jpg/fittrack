@@ -11,14 +11,14 @@ model User {
   id                  String   @id @default(cuid())
   name                String
   email               String   @unique
-  passwordHash        String
-  dateOfBirth         DateTime?
-  heightCm            Float?
-  initialWeightKg     Float?
-  preferredUnits      String   @default("metric")
+  passwordHash        String   @map("password_hash")
+  dateOfBirth         DateTime? @map("date_of_birth")
+  heightCm            Float?    @map("height_cm")
+  initialWeightKg     Float?    @map("initial_weight_kg")
+  preferredUnits      String   @default("metric") @map("preferred_units")
   theme               String   @default("dark")
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
   workouts            Workout[]
   meals               Meal[]
   sleepRecords        SleepRecord[]
@@ -26,6 +26,8 @@ model User {
   waterEntries        WaterEntry[]
   bodyMeasurements    BodyMeasurement[]
   activityLogs        ActivityLog[]
+
+  @@map("users")
 }
 
 model Workout {

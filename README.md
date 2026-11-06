@@ -1,8 +1,8 @@
 # FitTrack
 
-FitTrack is a personal health and fitness tracking web application. Its App Router UI presents an overview dashboard and focused pages for workouts, hydration, sleep, nutrition, activity, habits, and profile settings. It also includes demo registration and login endpoints, a NextAuth credentials handler, and a Prisma schema describing a planned PostgreSQL data model.
+FitTrack is a personal health and fitness tracking web application. Registration writes accounts to PostgreSQL, and login uses the NextAuth credentials provider. Health tracking pages still use sample data.
 
-> **Implementation status:** The health pages currently render sample data from `lib/mock-db.ts`. The registration, login, and NextAuth credentials handlers also use that in-memory module; they do not read or write the PostgreSQL database described by `prisma/schema.prisma`. This is a demo/prototype, not a persistent multi-user production application.
+> **Implementation status:** Authentication reads and writes the existing PostgreSQL `users` table. Health pages still render sample data from `lib/mock-db.ts` and are not user-specific.
 
 ## Contents
 
@@ -25,7 +25,8 @@ FitTrack is a personal health and fitness tracking web application. Its App Rout
 | Icons | lucide-react |
 | Authentication libraries | NextAuth credentials provider, bcrypt |
 | Validation | Zod |
-| Database schema (not currently wired to app flows) | Prisma, PostgreSQL |
+| Authentication database access | PostgreSQL via `pg` |
+| Health-data schema | Prisma, PostgreSQL |
 | Utility styling | clsx, tailwind-merge, class-variance-authority |
 
 ## High-level design (HLD)
@@ -38,23 +39,21 @@ flowchart LR
     Next --> Pages[Server-rendered page routes]
     Pages --> Shell[DashboardShell and shared UI]
     Pages --> Samples[lib/mock-db.ts sample data]
-    Browser[Browser client components] -->|POST JSON| LoginAPI[/api/login]
     Browser -->|POST JSON| RegisterAPI[/api/register]
-    LoginAPI --> SampleUsers[In-memory mockUsers]
-    RegisterAPI --> SampleUsers
     Browser -->|NextAuth protocol| AuthAPI[/api/auth/*]
-    AuthAPI --> SampleUsers
+    RegisterAPI --> Users[(PostgreSQL users)]
+    AuthAPI --> Users
     Browser -->|fittrack-theme localStorage| Theme[ThemeToggle]
     PrismaSchema[prisma/schema.prisma] -. described schema only .-> PostgreSQL[(PostgreSQL)]
 ```
 
-The dotted Prisma-to-PostgreSQL connection is **not active in the current request flows**. There is no Prisma client usage in the page or API implementations.
+Authentication uses parameterized SQL through `pg`; Prisma is not used at runtime. Health feature pages continue to use local sample data.
 
 ### Main components
 
 1. **App Router pages (`app/`)**
    - `/` is the public landing page.
-   - `/login` and `/register` are client-side forms that call the corresponding JSON endpoints.
+   - `/login` uses the NextAuth credentials provider; `/register` posts to the registration endpoint and then signs in.
    - `/dashboard` and the health feature routes render the dashboard shell and feature summaries.
    - Pages use static/sample records; the feature pages do not call resource APIs.
 
@@ -67,17 +66,15 @@ The dotted Prisma-to-PostgreSQL connection is **not active in the current reques
    - `lib/utils.ts` provides `cn`, which combines conditional classes and resolves Tailwind class conflicts.
 
 4. **Authentication routes (`app/api/`)**
-   - `/api/login` and `/api/register` are custom JSON route handlers.
-   - `/api/auth/[...nextauth]` exposes NextAuth's credentials/session protocol.
-   - All three currently look users up in the same process-local mock module.
+   - `/api/register` validates, hashes, and inserts users using parameterized SQL.
+   - `/api/auth/[...nextauth]` exposes NextAuth's credentials/session protocol and reads users from PostgreSQL.
+   - `proxy.ts` redirects unauthenticated visitors away from health pages.
 
 5. **Sample data (`lib/mock-db.ts`)**
-   - Provides typed sample health records, demo user data, and helper functions for user lookup and registration.
-   - `registerUser` mutates the module-level `mockUsers` array; it is not durable storage.
+   - Provides sample health records; it is not used for authentication.
 
 6. **Prisma schema (`prisma/schema.prisma`)**
-   - Defines PostgreSQL models for users and health records.
-   - Documents the intended relational shape, but no current page or handler uses it.
+   - Documents the PostgreSQL model; authentication SQL uses the `users` table directly.
 
 ### Request/rendering architecture
 
@@ -88,8 +85,8 @@ Most feature pages are server components that import sample data and render it d
 | Route | Purpose | Data source / behavior |
 | --- | --- | --- |
 | `/` | Landing page with feature preview and calls to action | Static presentation |
-| `/login` | Demo sign-in form | Sends `POST /api/login`, then navigates to `/dashboard` on success |
-| `/register` | Account/profile registration form | Sends `POST /api/register`, then sends `POST /api/login`, then navigates to `/dashboard` |
+| `/login` | Sign-in form | Uses NextAuth credentials sign-in and redirects to `/dashboard` |
+| `/register` | Account/profile registration form | Inserts into PostgreSQL, creates a NextAuth session, and redirects to `/dashboard` |
 | `/dashboard` | Summary metrics, charts, reminders, and recent records | `lib/mock-db.ts` |
 | `/workouts` | Workout sessions, exercises, weekly summary | `lib/mock-db.ts` |
 | `/water` | Hydration total, progress display, quick-add UI, history | `lib/mock-db.ts`; quick-add controls are presentation-only |
@@ -99,13 +96,13 @@ Most feature pages are server components that import sample data and render it d
 | `/habits` | Habit streaks and completion rates | `lib/mock-db.ts` |
 | `/profile` | Demo profile summary and settings form | `lib/mock-db.ts`; settings form is presentation-only |
 
-The dashboard links are currently navigable without authentication middleware. A successful response from the custom login endpoint does not itself protect or authorize the dashboard routes.
+Health pages are guarded by `proxy.ts` and require a valid NextAuth session.
 
 ## API endpoints
 
 ### `POST /api/register`
 
-Creates a demo user in the process-local `mockUsers` array.
+Creates an account in the existing PostgreSQL `users` table.
 
 **Request JSON**
 
@@ -113,52 +110,34 @@ Creates a demo user in the process-local `mockUsers` array.
 {
   "name": "Ava Thompson",
   "email": "ava@example.com",
-  "password": "password123",
-  "dateOfBirth": "1996-08-14",
-  "height": 170,
-  "initialWeight": 69,
-  "preferredUnits": "metric",
-  "goals": ["Build strength", "Improve sleep"],
-  "activityPreferences": ["Strength", "Running"]
+  "password": "SecurePass123",
+  "confirmPassword": "SecurePass123",
+  "termsAccepted": true,
+  "dateOfBirth": null,
+  "height": null,
+  "initialWeight": null,
+  "preferredUnits": "metric"
 }
 ```
 
-`goals` and `activityPreferences` default to empty arrays when omitted. `name` must contain at least two characters; email must be valid; password must contain at least eight characters; height and initial weight must be positive numbers; and `preferredUnits` must be `metric` or `imperial`. `dateOfBirth` is validated only as a string.
+Name and email are required. Passwords must contain at least eight characters, an uppercase and lowercase letter, and a number. The confirmation must match and terms must be accepted. Date of birth, height, and initial weight are optional. Passwords are bcrypt-hashed before insertion.
 
 **Responses**
 
 | Status | Body |
 | --- | --- |
 | `200` | `{ "ok": true, "user": { "id": "...", "name": "...", "email": "..." } }` |
-| `400` | `{ "error": { ... } }` for Zod validation errors; duplicate email and caught handler errors are also returned as `{ "error": "..." }` |
+| `400` | `{ "error": "..." }` for invalid input |
+| `409` | `{ "error": "An account with this email already exists" }` |
+| `500` | `{ "error": "Unable to create your account right now" }` |
 
-The implementation hashes a new password with bcrypt before storing the user in memory. An app/process restart discards users created this way.
+The SQL uses parameterized values and does not return the password hash.
 
-### `POST /api/login`
+### Login and sessions
 
-Checks credentials against `findUserByEmail` from the in-memory sample module and compares the submitted password with the stored bcrypt hash.
+The login form submits credentials to NextAuth's credentials endpoint. NextAuth looks up the user by case-insensitive email in PostgreSQL, compares the bcrypt hash, and creates an encrypted JWT session cookie on success. Invalid credentials produce a generic authentication error.
 
-**Request JSON**
-
-```json
-{
-  "email": "demo@fittrack.app",
-  "password": "demo123"
-}
-```
-
-The email must be valid and the password must contain at least eight characters.
-
-**Responses**
-
-| Status | Body |
-| --- | --- |
-| `200` | `{ "ok": true, "user": { "id": "...", "email": "...", "name": "..." } }` |
-| `400` | `{ "error": { ... } }` for validation errors |
-| `401` | `{ "error": "Invalid credentials" }` when the user is not found or the password does not match |
-| `500` | `{ "error": "..." }` for unexpected errors caught by the handler |
-
-This endpoint returns a JSON success response; it does not create a NextAuth session or set an authentication cookie.
+The dashboard header's **Sign out** button sends a same-origin `POST /api/auth/logout` request. The endpoint expires the NextAuth session cookie (including chunked cookies) before redirecting the browser to `/login`.
 
 ### `/api/auth/[...nextauth]`
 
@@ -169,9 +148,7 @@ The catch-all route is handled by NextAuth using the credentials provider and JW
 | `GET` | NextAuth session and provider/callback protocol endpoints |
 | `POST` | NextAuth sign-in, callback, and sign-out protocol endpoints |
 
-The credentials provider accepts `email` and `password`, checks the same in-memory user list, and compares the bcrypt hash. Its sign-in page is configured as `/login`. The exact subpaths and payloads are NextAuth protocol endpoints rather than custom FitTrack JSON contracts.
-
-> The current login and registration forms call `/api/login`, not the NextAuth sign-in protocol. Consequently, those form submissions do not establish the JWT session provided by `/api/auth/[...nextauth]`.
+The credentials provider accepts `email` and `password`, queries the `users` table, and compares the bcrypt hash. Its sign-in page is configured as `/login`. The exact subpaths and payloads are NextAuth protocol endpoints rather than custom FitTrack JSON contracts.
 
 ### Unsupported API routes
 
@@ -186,24 +163,22 @@ sequenceDiagram
     actor User
     participant Form as /register client page
     participant API as POST /api/register
-    participant Mock as lib/mock-db.ts
-    participant Login as POST /api/login
+    participant DB as PostgreSQL users table
+    participant Auth as NextAuth credentials
     participant Router as Next.js client router
 
     User->>Form: Submit profile and credentials
     Form->>API: JSON registration payload
     API->>API: Parse JSON and validate with Zod
-    API->>Mock: Check duplicate email
-    Mock-->>API: Existing user or no match
-    API->>Mock: Hash password and append new user
+    API->>DB: Check duplicate email and insert bcrypt hash
     API-->>Form: 200 user summary / 400 error
-    Form->>Login: On registration success, POST email + password
-    Login->>Mock: Find user and compare bcrypt hash
-    Login-->>Form: 200 success / error status
-    Form->>Router: On login endpoint success, navigate to /dashboard
+    Form->>Auth: Sign in with credentials
+    Auth->>DB: Find user and compare bcrypt hash
+    Auth-->>Form: Set NextAuth session cookie
+    Form->>Router: Navigate to /dashboard
 ```
 
-Registration and the follow-up login are two separate requests. The second request only verifies credentials; it does not establish a NextAuth session.
+Registration and session creation are separate requests. If sign-in fails after registration succeeds, the user can sign in from the login page.
 
 ### Login
 
@@ -211,18 +186,17 @@ Registration and the follow-up login are two separate requests. The second reque
 sequenceDiagram
     actor User
     participant Form as /login client page
-    participant API as POST /api/login
-    participant Mock as lib/mock-db.ts
+    participant Auth as NextAuth credentials endpoint
+    participant DB as PostgreSQL users table
     participant Router as Next.js client router
 
     User->>Form: Submit email and password
-    Form->>API: JSON credentials
-    API->>API: Parse JSON and validate with Zod
-    API->>Mock: Find user by case-insensitive email
-    Mock-->>API: User or no match
-    API->>API: Compare password with bcrypt hash
-    API-->>Form: 200 success / 400 validation / 401 invalid credentials
-    Form->>Router: On 200, navigate to /dashboard
+    Form->>Auth: Submit credentials
+    Auth->>DB: Find user by case-insensitive email
+    DB-->>Auth: User and bcrypt hash
+    Auth->>Auth: Compare password and create session
+    Auth-->>Form: Authenticated session or generic error
+    Form->>Router: On success, navigate to /dashboard
 ```
 
 ### Feature page rendering
@@ -265,15 +239,17 @@ app/
   habits/page.tsx              Habit completion overview
   profile/page.tsx             Demo profile and settings form
   api/
-    login/route.ts              Custom credential verification
-    register/route.ts           Custom in-memory registration
+    register/route.ts           PostgreSQL registration
     auth/[...nextauth]/route.ts NextAuth credentials/session handler
+lib/
+  db.ts                        PostgreSQL connection pool
+proxy.ts                       Authentication redirects for health pages
 components/
   dashboard-shell.tsx          Shared responsive health-app frame/navigation
   theme-toggle.tsx             Client-side persisted theme preference
   ui/                          Reusable presentational components
 lib/
-  mock-db.ts                   Typed sample data and in-memory user helpers
+  mock-db.ts                   Typed sample health and profile data
   utils.ts                     Tailwind class merge helper
 prisma/
   schema.prisma                PostgreSQL-oriented model definitions
@@ -281,23 +257,21 @@ prisma/
 
 ### Authentication responsibilities
 
-- **Validation:** Zod schemas are declared in the route handlers and validate parsed request JSON.
-- **Registration:** `registerUser` performs a case-insensitive duplicate check, hashes the password using bcrypt cost factor 10, creates a generated `user-${Date.now()}` ID, and appends the user to the module-level array.
-- **Custom login:** `POST /api/login` finds the user by case-insensitive email and verifies the password with bcrypt's asynchronous `compare`.
-- **NextAuth login:** `CredentialsProvider.authorize` repeats the lookup and password comparison for NextAuth sign-in requests.
-- **Session:** NextAuth is configured to use JWT strategy. This is separate from the custom JSON login API.
+- **Validation:** Registration payloads are validated with Zod before database access.
+- **Registration:** Checks for an existing email, hashes the password with bcrypt, and inserts into the existing `users` table using parameterized SQL.
+- **Login:** `CredentialsProvider.authorize` looks up the user in PostgreSQL and compares the hash with bcrypt.
+- **Session:** NextAuth issues JWT sessions with a 30-day maximum age; `proxy.ts` uses the session token to protect health pages.
 
 ### Error behavior
 
-- Zod errors use `error.flatten()` and are returned as JSON with HTTP `400`.
-- Invalid or unknown custom login credentials return the same `401` response.
-- Registration catches errors, including the duplicate-user error, and returns `400`.
-- The custom login handler catches unexpected exceptions and returns `500`.
+- Invalid registration data returns HTTP `400`; duplicate emails return `409`.
+- Invalid or unknown login credentials use a generic authentication error.
+- Database errors return generic server errors; diagnostic logs include database error codes only.
 - The client forms display an error message for non-success responses. They do not currently use a shared API client.
 
 ## Data model
 
-`prisma/schema.prisma` declares the following PostgreSQL entities. They describe the intended persistence model, not the current runtime store.
+`prisma/schema.prisma` declares the PostgreSQL entities. The `User` model maps to the existing `users` table; the health-record models are not yet connected to runtime data access.
 
 | Model | Important fields | Relationships |
 | --- | --- | --- |
@@ -312,7 +286,7 @@ prisma/
 | `BodyMeasurement` | Date, weight, optional waist/chest/notes, user ID | Belongs to `User` |
 | `ActivityLog` | Date, type, steps, optional distance, active minutes, calories, user ID | Belongs to `User` |
 
-The schema uses CUID primary keys, PostgreSQL as the datasource, and `DATABASE_URL` as the connection string. User email is unique. Most categorical values are represented as strings rather than Prisma enums. The existing app does not currently run migrations, instantiate Prisma Client, or enforce this schema in its mock data.
+The schema uses PostgreSQL as the datasource and `DATABASE_URL` as the connection string. User email is unique. Most categorical values are represented as strings rather than Prisma enums. The application does not instantiate Prisma Client or run migrations.
 
 ## Local development
 
@@ -339,35 +313,25 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run start` | Serve the production build |
 | `npm run lint` | Run ESLint |
 
-### Demo credentials
+### Authentication configuration
 
-The sample user in `lib/mock-db.ts` is:
+Copy `.env.example` to `.env.local` and set your PostgreSQL connection string and a strong NextAuth secret:
 
-```text
-Email:    demo@fittrack.app
-Password: demo123
+```env
+DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DATABASE
+NEXTAUTH_SECRET=your-long-random-secret
+NEXTAUTH_URL=http://localhost:3000
 ```
 
-These are demo credentials only. Do not reuse them for real accounts or production systems.
+The configured database must already contain a `users` table with `id`, `name`, `email`, `password_hash`, `date_of_birth`, `height_cm`, `initial_weight_kg`, `preferred_units`, `theme`, `created_at`, and `updated_at` columns. Email must have a unique constraint. `.env.example` contains placeholders only.
 
-### Environment variables and database
-
-The Prisma datasource expects `DATABASE_URL`. NextAuth reads `NEXTAUTH_SECRET`, but the current configuration falls back to a hard-coded development secret if that variable is unset. No database connection is required by the currently wired mock-data flows. Before using this app outside local/demo work:
-
-1. Configure a strong `NEXTAUTH_SECRET` through the deployment environment.
-2. Replace the hard-coded secret fallback.
-3. Wire Prisma Client into authentication and feature data access.
-4. Create and apply database migrations.
-5. Remove demo credentials and use persistent, per-user storage.
-
-Do not commit real secrets or database credentials.
+The application does not create or migrate the `users` table. Do not commit real secrets or database credentials.
 
 ## Known limitations and production considerations
 
-- **Volatile state:** users registered at runtime exist only in the current Node.js process and are lost on restart; state is not shared across instances.
+- **Database configuration:** registration/login require valid `DATABASE_URL` credentials and the existing `users` table.
 - **Demo health data:** feature pages read fixed sample data and do not filter by authenticated user.
 - **No health-record write APIs:** add, save, and quick-add UI affordances are not connected to persistent mutations.
-- **Authentication mismatch:** custom login returns JSON without setting a session; the NextAuth session protocol is implemented separately and is not used by the forms.
-- **No route protection:** dashboard and feature routes are directly accessible without a verified session.
-- **Prisma is not integrated:** the schema does not currently back the API routes or rendered pages.
-- **Production hardening required:** use a managed persistent database, production secrets, authorization checks, rate limiting, robust error handling, and a defined account/session lifecycle before deployment.
+- **Authentication limitations:** login uses encrypted JWT sessions; server-side database session revocation and rate limiting are not implemented.
+- **Prisma is not integrated at runtime:** direct SQL is used for authentication; health pages remain sample data.
+- **Production hardening required:** add rate limiting, account/session lifecycle management, and user-scoped health-record storage before deploying as a full multi-user tracker.
