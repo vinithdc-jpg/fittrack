@@ -9,8 +9,9 @@ export async function proxy(request: NextRequest) {
   const isAuthPage =
     request.nextUrl.pathname === "/login" ||
     request.nextUrl.pathname === "/register";
+  const isHomePage = request.nextUrl.pathname === "/";
 
-  if (isAuthPage && token) {
+  if ((isAuthPage || isHomePage) && token) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
@@ -23,6 +24,7 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/",
     "/dashboard/:path*",
     "/workouts/:path*",
     "/nutrition/:path*",
